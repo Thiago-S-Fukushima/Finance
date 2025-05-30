@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Transação</title>
+</head>
+<body>
+    <h1>Adicionar Transação</h1>
+    <form action="/views/new-transaction.html" method="POST">
+        <label>Descrição:</label>
+        <input type="text" name="description" required>
+
+        <label>Valor:</label>
+        <input type="number" name="amount" required step="0.01">
+
+        <label>Tipo:</label>
+        <select name="tipo">
+            <option value="input">Entrada</option>
+            <option value="exit">Saída</option>
+        </select>
+
+        <button type="submit">Salvar</button>
+    </form>
+
+    <a href="/views/dashboard.html">Voltar</a>
+</body>
+</html>
