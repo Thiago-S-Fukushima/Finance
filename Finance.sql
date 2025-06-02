@@ -1,0 +1,20 @@
+CREATE DATABASE finance;
+USE finance;
+
+CREATE TABLE users(
+users_id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(255) NOT NULL,
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE transactions(
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+user_id INT,
+type ENUM('entrada', 'saida') NOT NULL,
+amount INT NOT NULL,
+description VARCHAR(255) NOT NULL,
+category VARCHAR(255) NOT NULL,
+date DATE,
+FOREIGN KEY (user_id) REFERENCES users(users_id) ON DELETE CASCADE
+);
